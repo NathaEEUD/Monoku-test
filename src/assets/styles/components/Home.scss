@@ -1,0 +1,7 @@
+@import "../Vars.scss";
+@import "../Media.scss";
+
+#home {
+  @include flex-container();
+  flex-direction: column;
+}
