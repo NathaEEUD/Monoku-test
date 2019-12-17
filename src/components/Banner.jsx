@@ -3,11 +3,13 @@ import "../assets/styles/components/Banner.scss";
 
 const Banner = (props) => {
   console.log("Banner:::", props);
+  const { currentDay, currentTime } = props;
 
   return (
-    <div id="Banner">
-      <h1>Banner</h1>
-      <h1>Banner</h1>
+    <div id="banner">
+      <span className="banner__date">{currentDay}</span>
+      <span className="banner__time">{currentTime}</span>
+      <span className="banner__question">¿Qué planeas hacer el día de hoy?</span>
     </div>
   );
 };

@@ -1,2 +1,36 @@
 @import "../Vars.scss";
 @import "../Media.scss";
+
+#banner {
+  display: flex;
+  flex-direction: column;
+  width: 838px;
+  height: 275px;
+  padding: 39px 73px;
+  opacity: 0.72;
+  border-radius: 15px;
+  background-image: linear-gradient(242deg, rgba(34, 102, 247, 0.79) 105%, #3720b0 27%);
+
+  & .banner-date {
+    opacity: 0.43;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: normal;
+    color: #ffffff;
+  }
+
+  & .banner__time {
+    font-size: 74px;
+    font-weight: 200;
+    letter-spacing: normal;
+    color: #ffffff;
+    margin-bottom: 32px;
+  }
+
+  & .banner__question {
+    font-size: 32px;
+    font-weight: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+  }
+}
