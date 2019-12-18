@@ -1,7 +1,8 @@
 @media only screen and (max-width: 1200px) {
   #banner,
   #add-task .add-task__form,
-  #home .home__add-task-container {
+  #home .home__add-task-container,
+  #home .home__todos-container {
     width: calc(300px + 538 * ((100vw - 380px) / 820));
   }
 }
