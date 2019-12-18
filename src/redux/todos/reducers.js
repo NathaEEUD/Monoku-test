@@ -26,13 +26,17 @@ export default handleActions(
       return { ...state, data: action.payload, loading: false };
     },
     [TODO_CREATE]: (state, action) => {
-      return action.payload;
+      return { ...state, data: [...state.data, action.payload], loading: false };
     },
     [TODO_EDIT]: (state, action) => {
       return action.payload;
     },
     [TODO_DELETE]: (state, action) => {
-      return action.payload;
+      return {
+        ...state,
+        data: state.data.filter((tasks) => tasks.id !== action.payload),
+        loading: false,
+      };
     },
   },
   INITIAL_STATE,

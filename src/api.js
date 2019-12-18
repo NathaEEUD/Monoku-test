@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const requestHelper = axios.create({
-  // baseURL: "http://monoku-tasks.herokuapp.com/493iCjqFQg0yIxd4Euqw/",
-  baseURL: "http://localhost:8801",
+  baseURL: "http://monoku-tasks.herokuapp.com/493iCjqFQg0yIxd4Euqw/",
+  // baseURL: "http://localhost:8801",
   headers: {
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin": "*",
@@ -11,9 +11,9 @@ const requestHelper = axios.create({
 
 export default {
   todos: {
-    get: () => requestHelper({ url: "mongodb", method: "get" }),
+    get: () => requestHelper({ url: "all", method: "get" }),
     create: (data) => requestHelper({ url: "add", method: "post", data }),
     edit: (data) => requestHelper({ url: "update", method: "put", data }),
-    delete: (taskId) => requestHelper({ url: `${taskId}/delete`, method: "put" }),
+    delete: (taskId) => requestHelper({ url: `${taskId}/delete`, method: "delete" }),
   },
 };

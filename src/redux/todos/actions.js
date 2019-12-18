@@ -25,11 +25,28 @@ export const getTodos = () => async (dispatch) => {
   }
 };
 
-// export const createComment = (data) => async (dispatch) => {
-//   try {
-//     const response = await api.comments.create(data);
-//     dispatch(commentCreate(response.data));
-//   } catch (error) {
-//     dispatch(handleApiError(error));
-//   }
-// };
+export const createTodo = (data) => async (dispatch) => {
+  dispatch(loading());
+  console.log("createTodo::::", data);
+  try {
+    const response = await api.todos.create(data);
+    dispatch(todoCreate(response.data));
+  } catch (error) {
+    dispatch(handleApiError(error));
+  }
+};
+
+export const deleteTodo = (todoId) => async (dispatch) => {
+  dispatch(loading());
+  console.log("deleteTodo::::", todoId);
+  try {
+    const response = await api.todos.delete(todoId);
+    console.log("deleteTodo response::::", response);
+
+    if (response.data.success) {
+      dispatch(deleteTodo(todoId));
+    }
+  } catch (error) {
+    dispatch(handleApiError(error));
+  }
+};

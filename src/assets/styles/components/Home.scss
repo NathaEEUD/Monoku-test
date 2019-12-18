@@ -4,4 +4,20 @@
 #home {
   @include flex-container();
   flex-direction: column;
+
+  & .home__todos-container {
+    width: $main-width;
+  }
+
+  & .home__add-task-container {
+    width: 838px;
+  }
+
+  & .home__todos-text {
+    font-size: 20px;
+    font-weight: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #b3b3b3;
+  }
 }

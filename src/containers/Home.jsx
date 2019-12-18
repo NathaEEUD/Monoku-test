@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { getTodos } from "../redux/todos/actions";
 import "../assets/styles/components/Home.scss";
 import Banner from "../components/Banner";
+import AddTask from "../components/AddTask";
 import Task from "../components/Task";
 
 class Home extends Component {
@@ -38,8 +39,14 @@ class Home extends Component {
         <div className="home__banner-container">
           <Banner currentDay={currentDay} currentTime={currentTime} />
         </div>
+        <div className="home__add-task-container">
+          <AddTask />
+        </div>
         <div className="home__todos-container">
-          {todos.data && todos.data.map((task) => <Task key={task._id} task={task} />)}
+          {todos.data && todos.data.map((task) => <Task key={task.id} task={task} />)}
+          {!todos.data && (
+            <span className="home__todos-text">No has añadido ninguna tarea hasta ahora</span>
+          )}
         </div>
       </section>
     );

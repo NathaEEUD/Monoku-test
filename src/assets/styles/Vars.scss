@@ -2,6 +2,7 @@
 
 $theme-font: "Muli", sans-serif;
 $main-color: #e8e8e8;
+$main-width: calc(300px + 538 * ((100vw - 380px) / 820));
 
 @function main-color-alfa($alfa: 0.5) {
   @return rgba(255, 255, 255, $alfa);
