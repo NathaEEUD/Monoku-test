@@ -10,11 +10,30 @@ class Home extends Component {
   constructor(props) {
     super(props);
 
+    const days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+    const months = [
+      "Enero",
+      "Febrero",
+      "Marzo",
+      "Abril",
+      "Mayo",
+      "Junio",
+      "Julio",
+      "Agosto",
+      "Septiembre",
+      "Octubre",
+      "Noviembre",
+      "Diciembre",
+    ];
+
     const today = new Date();
+    const day = days[today.getDay()];
+    const month = months[today.getMonth()];
+    const currentDay = `${day}, ${today.getDay()} de ${month}`;
 
     this.state = {
-      currentDay: today.toLocaleDateString(),
-      currentTime: today.toLocaleTimeString(),
+      currentDay,
+      currentTime: today.toLocaleTimeString().slice(0, 5),
     };
   }
 
@@ -24,13 +43,12 @@ class Home extends Component {
 
     setInterval(() => {
       this.setState({
-        currentTime: new Date().toLocaleTimeString(),
+        currentTime: new Date().toLocaleTimeString().slice(0, 5),
       });
-    }, 60000);
+    }, 1000);
   }
 
   render() {
-    console.log("Home:::", this.props);
     const { todos } = this.props;
     const { currentDay, currentTime } = this.state;
 

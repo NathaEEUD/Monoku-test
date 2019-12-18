@@ -29,12 +29,12 @@ export default handleActions(
       return { ...state, data: [...state.data, action.payload], loading: false };
     },
     [TODO_EDIT]: (state, action) => {
-      return action.payload;
+      return { ...state, loading: false };
     },
     [TODO_DELETE]: (state, action) => {
       return {
         ...state,
-        data: state.data.filter((tasks) => tasks.id !== action.payload),
+        data: state.data.filter((task) => task.id !== action.payload),
         loading: false,
       };
     },

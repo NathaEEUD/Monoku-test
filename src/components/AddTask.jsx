@@ -7,6 +7,7 @@ const AddTask = (props) => {
   console.log("AddTask:::", props);
 
   const [form, setValues] = useState("");
+  const [buttonClass, setButtonClass] = useState("add-task__form-button hide");
 
   const handleInput = (event) => {
     setValues(event.target.value);
@@ -15,10 +16,21 @@ const AddTask = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("handleinput::::", form);
-    props.createTodo({ text: form });
-    setValues("");
+    setButtonClass("add-task__form-button");
+    if (form !== "") {
+      console.log("handleinput::::", form);
+      props.createTodo({ text: form });
+      setValues("");
+    }
   };
+
+  const handleFocus = () => {
+    setButtonClass("add-task__form-button");
+  };
+
+  // const handleBlur = () => {
+  //   setButtonClass("add-task__form-button hide");
+  // };
 
   return (
     <div id="add-task">
@@ -32,8 +44,9 @@ const AddTask = (props) => {
           value={form}
           placeholder="Eje: Comprar materiales para trabajar"
           onChange={(e) => handleInput(e)}
+          onFocus={handleFocus}
         />
-        <button type="submit" className="add-task__form-button">
+        <button type="submit" className={buttonClass}>
           Añadir Tarea
         </button>
       </form>

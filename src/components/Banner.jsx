@@ -2,7 +2,6 @@ import React from "react";
 import "../assets/styles/components/Banner.scss";
 
 const Banner = (props) => {
-  console.log("Banner:::", props);
   const { currentDay, currentTime } = props;
 
   return (

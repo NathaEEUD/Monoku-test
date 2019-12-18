@@ -17,15 +17,16 @@
   & .task__radio {
     width: 23px;
     height: 23px;
-    margin-right: 16px;
     border-radius: 50%;
     box-shadow: 0 7px 11px -6px rgba(23, 28, 52, 0.23), 0 -6px 9px 0 rgba(255, 255, 255, 0.39),
       0 2px 4px 0 rgba(0, 0, 0, 0.07), inset 0 1px 5px 0 rgba(0, 0, 0, 0.08);
     border: solid 1px #cccccc;
     background-color: #ededed;
+    cursor: pointer;
   }
 
   & .task__text {
+    margin-left: 16px;
     font-size: 17px;
     font-weight: normal;
     letter-spacing: normal;
@@ -35,6 +36,12 @@
   & .task__icon-delete {
     width: 11px;
     height: 13px;
+    cursor: pointer;
+  }
+
+  & .task__icon-check {
+    width: 23px;
+    height: 23px;
     cursor: pointer;
   }
 }

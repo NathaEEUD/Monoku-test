@@ -1,9 +1,23 @@
 @media only screen and (max-width: 1200px) {
   #banner,
-  #add-task .add-task__form,
-  #home .home__add-task-container,
   #home .home__todos-container {
     width: calc(300px + 538 * ((100vw - 380px) / 820));
+  }
+
+  #home .home__add-task-container {
+    width: calc(300px + 395 * ((100vw - 380px) / 820));
+  }
+
+  #banner .banner__date {
+    font-size: calc(14px + 3 * ((100vw - 380px) / 820));
+  }
+
+  #banner .banner__time {
+    font-size: calc(64px + 10 * ((100vw - 380px) / 820));
+  }
+
+  #banner .banner__question {
+    font-size: calc(18px + 14 * ((100vw - 380px) / 820));
   }
 }
 
@@ -11,6 +25,30 @@
 }
 
 @media only screen and (max-width: 768px) {
+  #home .home__add-task-container {
+    width: calc(300px + 255 * ((100vw - 380px) / 388));
+  }
+
+  #banner {
+    margin-top: 30px;
+    margin-left: 23px;
+    margin-right: 23px;
+    padding: 41px 36px;
+  }
+
+  #add-task {
+    text-align: center;
+
+    & .add-task__form {
+      flex-direction: column;
+
+      & button {
+        position: initial;
+        align-self: flex-end;
+        margin-top: 21px;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 565px) {

@@ -13,7 +13,7 @@ export default {
   todos: {
     get: () => requestHelper({ url: "all", method: "get" }),
     create: (data) => requestHelper({ url: "add", method: "post", data }),
-    edit: (data) => requestHelper({ url: "update", method: "put", data }),
+    edit: (taskId, data) => requestHelper({ url: `${taskId}/update`, method: "put", data }),
     delete: (taskId) => requestHelper({ url: `${taskId}/delete`, method: "delete" }),
   },
 };
